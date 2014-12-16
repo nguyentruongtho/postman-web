@@ -2006,7 +2006,8 @@ pm.request = {
 
         //Start setting up XHR
         var xhr = new XMLHttpRequest();
-        xhr.open(method, url, true); //Open the XHR request. Will be sent later
+        xhr.open(method, "/proxy", true); //Open the XHR request. Will be sent later
+        xhr.setRequestHeader("HttpUrl", url);
         xhr.onreadystatechange = function (event) {
             pm.request.response.load(event.target);
         };
