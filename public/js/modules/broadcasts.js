@@ -108,7 +108,8 @@ pm.broadcasts = {
     renderBroadcasts:function () {
         var broadcasts = JSON.parse(localStorage["broadcasts"]);
 
-        $("#broadcasts .dropdown-menu").html("");
-        $("#broadcasts .dropdown-menu").append(Handlebars.templates.broadcasts({"items":broadcasts}));
+        var $dropdown_menu = $("#broadcasts").find(".dropdown-menu");
+        $dropdown_menu.html("");
+        $dropdown_menu.append(Handlebars.templates.broadcasts({"items":broadcasts}));
     }
 };

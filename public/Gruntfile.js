@@ -12,18 +12,18 @@ module.exports = function(grunt) {
     },
     concat: {
       dist: {
-        src: ['chrome/js/modules/*.js'],
-        dest: 'chrome/js/requester.js'
+        src: ['js/modules/*.js'],
+        dest: 'js/requester.js'
       }
     },
     mindirect: {
       dist: {
-        src: ['chrome/js/requester.js'],
-        dest: 'chrome/js/requester.min.js'
+        src: ['js/requester.js'],
+        dest: 'js/requester.min.js'
       }
     },
     watch: {
-      files: ['chrome/js/modules/*.js', 'chrome/js/templates/*'],
+      files: ['js/modules/*.js', 'js/templates/*'],
       tasks: ['concat', 'handlebars']
     },
     jshint: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "chrome/js/templates.js": "chrome/js/templates/*"
+          "js/templates.js": "js/templates/*"
         }
       }
     }

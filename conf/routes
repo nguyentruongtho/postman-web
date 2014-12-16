@@ -3,7 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Assets.at(path="/public", file="index.html")
-GET     /*file                      controllers.Assets.at(path="/public", file)
+GET        /             controllers.Assets.at(path="/public", file="index.html")
 
-    
+GET        /proxy        controllers.ProxyController.reverseProxy
+
+GET        /*file        controllers.Assets.at(path="/public", file)
