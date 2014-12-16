@@ -16,7 +16,7 @@ object ProxyController extends Controller {
     request: Request[RawBuffer] =>
       // Create the request to the upstream server
         val proxyRequest = WS.url(request.headers("HttpUrl"))
-          .withFollowRedirects(follow = false)
+          .withFollowRedirects(follow = true)
           .withMethod(request.method)
           .withHeaders(request.headers.toMap.mapValues(_.head).toSeq: _*)
           .withQueryString(request.queryString.mapValues(_.head).toSeq: _*)
